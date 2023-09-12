@@ -1,0 +1,13 @@
+{
+  "name": "rule-engine",
+  "version": "1.0.0",
+  "main": "./src/main.mjs",
+  "scripts": {
+    "start": "node ./src/main.mjs"
+  },
+  "author": "Kristiyan Tachev",
+  "license": "MIT",
+  "devDependencies": {
+    "vm2": "^3.9.19"
+  }
+}
