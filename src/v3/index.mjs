@@ -6,7 +6,7 @@ class RuleEngineUtil {
     id: 1,
     name: 'Calculate digital twin',
     viewValueName: 'myCalculation',
-    formulasSequence: [1, 2, 3, 4]
+    formulasSequence: [1, 2, 3]
   },
   {
     id: 2,
@@ -61,7 +61,9 @@ class RuleEngineUtil {
     const flow = this.flows.find(v => v.id === flowId);
     let calculatedValue;
     for (const formulaId of flow.formulasSequence) {
+
       const formula = this.formulas.find(v => v.id === formulaId);
+
       calculatedValue = await this.genericEvaluateTemplate(calculatedValue || value, formula);
     }
     return {
@@ -99,7 +101,7 @@ const ruleEngineUtil = new RuleEngineUtil();
 
 async function basicRequest() {
   const requestBody = {
-    flows: [1, 2, 3, 4],
+    flows: [1, 2, 3],
     shape: "circle",
     side: 5,
   };
@@ -166,4 +168,4 @@ async function advancedRequest() {
 
 basicRequest().then(console.log)
 
-advancedRequest().then(console.log)
+// advancedRequest().then(console.log)
